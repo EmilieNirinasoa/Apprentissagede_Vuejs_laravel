@@ -19,3 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('/donnees', [AffichageController::class,'index'])->name('Affichage');
+Route::post('/insertion', [AffichageController::class, 'store']);
+Route::delete('/ressource/{id}',  [AffichageController::class, 'destroy']);
+Route::put('/update/{id}', [AffichageController::class, 'update']);
