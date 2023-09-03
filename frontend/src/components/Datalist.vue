@@ -3,7 +3,7 @@
      
       <h2>Liste de données</h2>
       <ul>
-        <li v-for="item in dataList" :key="item.id">{{ item.nom }} <DeleteData :itemId="item.id" @delete="onDeleteItem"/><router-link :to="{ name: 'update', params: { id: item.id }}">Utilisateur</router-link></li>
+        <li v-for="item in dataList" :key="item.id">{{ item.nom }} <DeleteData :itemId="item.id" @delete="onDeleteItem"/> <button @click="handleItemClick(item.id)">Modifier</button></li>
       </ul>
     </div>
   </template>
@@ -31,7 +31,10 @@ import LienData from './lienData.vue';
             catch (error) {
                 console.error('Une erreur s\'est produite lors de la récupération des données', error);
             }
-        }
+        },
+        handleItemClick(id) {
+      this.$emit('item-clicked', id); // Émet un événement personnalisé avec l'ID de l'élément
+    },
     },
     components: { DeleteData, LienData }
 };

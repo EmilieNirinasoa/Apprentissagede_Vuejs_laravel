@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Affichage extends Model
 {
     use HasFactory;
+    protected $table='affichages';
+    protected $fillable=[
+        'nom',
+        'prenom'
+    ];
 }

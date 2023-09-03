@@ -16,16 +16,21 @@ const routes = [
   {
     path: '/update/:id',
     name: 'update',
-    component: UpdateDataVue,
+    component: updateDataVue,
     props: true,
   },
+ 
   // Ajoutez vos autres routes ici
 ];
-
 const router = createRouter({
   history: createWebHistory(),
-  routes,
-});
+  routes: [{ path: '/', component: AppVue }],
+})
+
+// const router = createRouter({
+//   history: createWebHistory(),
+//   routes,
+// });
 // const User = {
 //   template: '<div>Utilisateur {{ $route.params.id }}</div>'
 // }

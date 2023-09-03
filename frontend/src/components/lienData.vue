@@ -11,7 +11,7 @@
     },
     methods: {
       allerVersPageMiseAJour() {
-        this.router.push({ name: 'update', params: { id: this.itemId } });
+        this.$router.push({ name: 'update', params: { id: this.itemId } });
       },
     },
   };
